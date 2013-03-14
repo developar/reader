@@ -33,7 +33,7 @@
             div.sidebar {
                 top: 0px;
                 left: 0px;
-                height: 100%; 
+                height: 89.5%; 
                 width: 10%;
                 position: absolute; 
                 border-right: 3px black solid;
@@ -42,7 +42,7 @@
                 float: right;
                 overflow: visible; 
                 overflow-y: auto; 
-                height: 89%;
+                height: 88.5%;
                 width: 88%;
                 padding-top: 5px;
                 padding-left: 20px;
