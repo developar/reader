@@ -1,33 +1,33 @@
 <?php
 
-getXML('Takeout/subscriptions.xml');
+$feed = getXML('Takeout/subscriptions.xml');
+
+switch (getXMLType($feed)) {
+    case 'OPML':
+        echo 'OPML';
+
+        break;
+
+    default:
+        break;
+}
 
 function getXML($file) {
     $xml = simplexml_load_file($file);
+    return $xml;
+}
+
+function getXMLType($xml) {
     $xmlName = $xml->getName();
     switch ($xmlName) {
         case 'opml':
-            echo "This is an OPML file.<br>" . PHP_EOL;
-            $feedCount = $xml->body->outline->count();
-            echo "There are {$feedCount} feeds.<br>" . PHP_EOL;
-            for ($i = 0; $i <= $feedCount; $i++) {
-                $title = xml_attribute($xml->body->outline[$i], 'title');
-                $xmlURL = xml_attribute($xml->body->outline[$i], 'xmlUrl');
-                if (gettype($xmlURL) === 'NULL') {
-                    $title = 'Folder: ' . $title;
-                }
-                $htmlURL = xml_attribute($xml->body->outline[$i], 'htmlUrl');
-                $type = xml_attribute($xml->body->outline[$i], 'type');
-                echo "<a href=\"{$xmlURL}\">{$title}</a><br>" . PHP_EOL;
-                getXML($xmlURL);
-            }
-            break;
+            return 'OPML';
 
         case 'rss':
             $rssVersion = xml_attribute($xml, 'version');
             echo "This is an RSS {$rssVersion} feed<br>" . PHP_EOL;
             $namespaces = $xml->getNamespaces(true);
-            echo '$' . searchNSByVal($namespaces, 'http://www.w3.org/2005/Atom') . '$<br>' . PHP_EOL;
+            $hasATOM = existsNSByVal($namespaces, 'http://www.w3.org/2005/Atom');
             echo "<pre>";
             print_r($namespaces);
             print_r($xml->attributes());
@@ -37,14 +37,54 @@ function getXML($file) {
         default:
             echo $xmlName;
             $namespaces = $xml->getNamespaces(true);
-            echo '$' . searchNSByVal($namespaces, 'http://www.w3.org/2005/Atom') . '$<br>' . PHP_EOL;
+            $hasATOM = existsNSByVal($namespaces, 'http://www.w3.org/2005/Atom');
             echo "<pre>";
             print_r($namespaces);
             print_r($xml->attributes());
-            //print_r($xml);
+//print_r($xml);
             echo "<pre>";
             break;
     }
+}
+
+function readOPML($xml) {
+
+    $feedCount = $xml->body->outline->count();
+    echo "There are {$feedCount} feeds.<br>" . PHP_EOL;
+    for ($i = 0; $i <= $feedCount; $i++) {
+        $title = xml_attribute($xml->body->outline[$i], 'title');
+        $xmlURL = xml_attribute($xml->body->outline[$i], 'xmlUrl');
+        if (gettype($xmlURL) === 'NULL') {
+            $title = 'Folder: ' . $title;
+        }
+        $htmlURL = xml_attribute($xml->body->outline[$i], 'htmlUrl');
+        $type = xml_attribute($xml->body->outline[$i], 'type');
+        echo "<a href=\"{$xmlURL}\">{$title}</a><br>" . PHP_EOL;
+        getXML($xmlURL);
+    }
+
+    function readRSS($xml) {
+
+        $rssVersion = xml_attribute($xml, 'version');
+        echo "This is an RSS {$rssVersion} feed<br>" . PHP_EOL;
+        $namespaces = $xml->getNamespaces(true);
+        $hasATOM = existsNSByVal($namespaces, 'http://www.w3.org/2005/Atom');
+        echo "<pre>";
+        print_r($namespaces);
+        print_r($xml->attributes());
+        echo "</pre>";
+    }
+
+    function readUnknown($xml) {
+        $namespaces = $xml->getNamespaces(true);
+        $hasATOM = existsNSByVal($namespaces, 'http://www.w3.org/2005/Atom');
+        echo "<pre>";
+        print_r($namespaces);
+        print_r($xml->attributes());
+//print_r($xml);
+        echo "<pre>";
+    }
+
 }
 
 function xml_attribute($object, $attribute) {
@@ -53,12 +93,12 @@ function xml_attribute($object, $attribute) {
     }
 }
 
-function searchNSByVal($array, $value) {
+function existsNSByVal($array, $value) {
     $return = array_search($value, $array);
     if ($return === FALSE) {
-        return 'not found';
+        return FALSE;
     } else {
-        return $return;
+        return TRUE;
     }
 }
 
