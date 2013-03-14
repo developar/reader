@@ -10,6 +10,9 @@ switch ($xmlName) {
         for ($i = 0; $i <= $feedCount; $i++) {
             $title = xml_attribute($xml->body->outline[$i], 'title');
             $xmlURL = xml_attribute($xml->body->outline[$i], 'xmlUrl');
+            if (gettype($xmlURL) === 'NULL') {
+                $title = 'Folder: '. $title;
+            }
             $htmlURL = xml_attribute($xml->body->outline[$i], 'htmlUrl');
             $type = xml_attribute($xml->body->outline[$i], 'type');
             echo "<a href=\"{$htmlURL}\">{$title}</a><br>" . PHP_EOL;
