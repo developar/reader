@@ -24,26 +24,11 @@ function getXMLType($xml) {
             return 'OPML';
 
         case 'rss':
-            $rssVersion = xml_attribute($xml, 'version');
-            echo "This is an RSS {$rssVersion} feed<br>" . PHP_EOL;
-            $namespaces = $xml->getNamespaces(true);
             $hasATOM = existsNSByVal($namespaces, 'http://www.w3.org/2005/Atom');
-            echo "<pre>";
-            print_r($namespaces);
-            print_r($xml->attributes());
-            echo "</pre>";
-            break;
+            return 'RSS';
 
         default:
-            echo $xmlName;
-            $namespaces = $xml->getNamespaces(true);
-            $hasATOM = existsNSByVal($namespaces, 'http://www.w3.org/2005/Atom');
-            echo "<pre>";
-            print_r($namespaces);
-            print_r($xml->attributes());
-//print_r($xml);
-            echo "<pre>";
-            break;
+            return 'Unknown';
     }
 }
 
