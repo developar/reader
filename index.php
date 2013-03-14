@@ -23,7 +23,7 @@
                 border-bottom: 3px black solid;
             }
             div.main-container {
-                top: 5.5%;
+                top: 5.45%;
                 bottom: 5%;
                 overflow: hidden; 
                 position: absolute; 
@@ -33,7 +33,7 @@
             div.sidebar {
                 top: 0px;
                 left: 0px;
-                height: 5%; 
+                height: 100%; 
                 width: 10%;
                 position: absolute; 
                 border-right: 3px black solid;
@@ -43,7 +43,9 @@
                 overflow: visible; 
                 overflow-y: auto; 
                 height: 89%;
-                width: 90%
+                width: 88%;
+                padding-top: 5px;
+                padding-left: 20px;
             }
             div.bottom {
                 bottom: 0px;
