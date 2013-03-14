@@ -1,0 +1,107 @@
+{
+  "friends" : [ {
+    "userIds" : [ "09345592638767527614" ],
+    "profileIds" : [ "116009903646946063741" ],
+    "contactId" : "516",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECP3qzaOv0aaX3gEiC3ZjYXJkX3Bob3RvKihjOWY2NzBiNGZiMWM2MTk3YzY5OGE3YjRkMTc4MGNjY2NhODEyZDIzMAE1RvYrvITs4JCaQK8WmvOQUdrBxQ",
+    "stream" : "user/09345592638767527614/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 5 ],
+    "displayName" : "Jamie Robertson",
+    "givenName" : "Jamie",
+    "n" : "",
+    "p" : "",
+    "websites" : [ {
+      "title" : "jamiecotc",
+      "url" : "http://www.facebook.com/jamiecotc"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/116009903646946063741/buzz"
+    }, {
+      "title" : "Jamie Robertson",
+      "url" : "http://www.youtube.com/user/jamiecotc"
+    }, {
+      "title" : "jamiecotc",
+      "url" : "http://twitter.com/jamiecotc"
+    } ]
+  }, {
+    "userIds" : [ "12777349808909893801" ],
+    "profileIds" : [ "109710381164737910348" ],
+    "contactId" : "3910810985850384491",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECMys466Lh43hhgEiC3ZjYXJkX3Bob3RvKigyM2M4N2U1NTExMzQzNzM5NWYzOTI4YmNiYWVlMDM4MzgwMDU4OTQ5MAEdmIfVBmHWb-abZQCWVtAJ19iS8Q",
+    "location" : "Buffalo, NY",
+    "stream" : "user/12777349808909893801/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 5 ],
+    "displayName" : "Timothy Kowalski",
+    "givenName" : "Timothy",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "3076296535960742869" ]
+  }, {
+    "userIds" : [ "05305467094383240678" ],
+    "profileIds" : [ "100439059182232895057" ],
+    "contactId" : "5226850866560257227",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCNH89YKAwPaLBiILdmNhcmRfcGhvdG8qKDAyNTA1MTY5ODNhODlkNTFhNjQ2ZTYwY2U2MWRjYWYwZDE4NTYyZTkwAXJfX2VlBMBeOjuNjIDQQqmS3OV-",
+    "stream" : "user/05305467094383240678/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 5 ],
+    "displayName" : "Edward Toy",
+    "givenName" : "Edward",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "3076296535960742869" ],
+    "websites" : [ {
+      "title" : "Edward Toy",
+      "url" : "http://www.youtube.com/user/toyet24"
+    }, {
+      "title" : "toyet24",
+      "url" : "http://toyet24.deviantart.com"
+    } ]
+  }, {
+    "userIds" : [ "16531328150113822999" ],
+    "profileIds" : [ "110373066452149141710" ],
+    "contactId" : "502",
+    "location" : "Amherst, ny",
+    "stream" : "user/16531328150113822999/state/com.google/broadcast",
+    "flags" : 34,
+    "types" : [ 3, 5 ],
+    "displayName" : "Chris Bavaro",
+    "givenName" : "Chris",
+    "n" : "",
+    "p" : ""
+  }, {
+    "userIds" : [ "01071132167520030098" ],
+    "profileIds" : [ "102311621579821791672" ],
+    "contactId" : "58",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCLjznoPF8qGKICILdmNhcmRfcGhvdG8qKDY2MWViODcyMWI5OTE0MmU0ZmQxMWU5MGRhZWJmY2M4ZWE5ZDU3YmIwAS7p0SLfj-uwTg9h_KwgX7izlcGC",
+    "stream" : "user/01071132167520030098/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 3, 5 ],
+    "displayName" : "Katrina Oberhelman",
+    "givenName" : "Katrina",
+    "n" : "",
+    "p" : "",
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/102311621579821791672/buzz"
+    } ]
+  }, {
+    "userIds" : [ "04778098865386981233" ],
+    "profileIds" : [ "114859631127739487859" ],
+    "contactId" : "-1",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECPOs__H--ICczgEiC3ZjYXJkX3Bob3RvKihlNWUxNjNkZGExMDM1ZTQ2MTU2YjQzZTRlOTc1MGI5Zjg0MWU2MmE2MAHV-63_LtpQw2Et4hl8ZLgKGe2Jrg",
+    "location" : "Buffalo, NY",
+    "stream" : "user/04778098865386981233/state/com.google/broadcast",
+    "flags" : 33,
+    "displayName" : "Joseph Becher",
+    "givenName" : "Joseph",
+    "n" : "",
+    "p" : "",
+    "websites" : [ {
+      "title" : "Joseph Becher",
+      "url" : "http://www.youtube.com/user/jwbecher"
+    } ],
+    "hasSharedItemsOnProfile" : false
+  } ]
+}

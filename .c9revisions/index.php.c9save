@@ -1,0 +1,8 @@
+{"ts":1363224694711,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1363224750244,"patch":[[{"diffs":[[1,"<html>\n    <head>\n        <title></title>\n    </head>\n    <body>\n        \n    </body>\n</html>"]],"start1":0,"start2":0,"length1":0,"length2":93}]],"length":93,"saved":false}
+{"ts":1363225102323,"patch":[[{"diffs":[[0," <title>"],[1,"Reader"],[0,"</title>"]],"start1":25,"start2":25,"length1":16,"length2":22}]],"length":99,"saved":false}
+{"ts":1363226059163,"patch":[[{"diffs":[[0,"        "],[1,"<?php \n        $subs = file('Takeout/subscriptions.xml');\n        echo $subs;\n        ?>"],[0,"\n    </b"]],"start1":71,"start2":71,"length1":16,"length2":104}]],"length":187,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1363226286655,"patch":[[{"diffs":[[0,"    "],[-1,"echo"],[1,"print()"],[0," $su"]],"start1":141,"start2":141,"length1":12,"length2":15}]],"length":190,"saved":false}
+{"ts":1363226288308,"patch":[[{"diffs":[[0,"int("],[-1,") "],[0,"$sub"]],"start1":147,"start2":147,"length1":10,"length2":8}]],"length":188,"saved":false}
+{"ts":1363226290304,"patch":[[{"diffs":[[0,"nt($subs"],[1,")"],[0,";\n      "]],"start1":148,"start2":148,"length1":16,"length2":17}]],"length":189,"saved":false}
+{"ts":1363226309368,"patch":[[{"diffs":[[0,"   print"],[1,"_r"],[0,"($subs);"]],"start1":142,"start2":142,"length1":16,"length2":18}]],"length":191,"saved":false}
