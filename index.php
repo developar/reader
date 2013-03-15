@@ -4,25 +4,20 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
         <title>Reader</title>
         <style>
-            * {
-                margin: 0px;
-                padding: 0px;
-            }
-            div {
-                display: block;
-            }
             body {
                 overflow: hidden;
                 display: block;
+                margin: 0;
+                padding: 0;
             }
-            div.top {
-                top: 0px;
+            .top {
+                top: 0;
                 height: 5%; 
                 width: 100%;
                 position: absolute; 
                 border-bottom: 3px black solid;
             }
-            div.main-container {
+            .main-container {
                 top: 5.45%;
                 bottom: 5%;
                 overflow: hidden; 
@@ -30,15 +25,15 @@
                 height: 100%;
                 width: 100%
             }
-            div.sidebar {
-                top: 0px;
-                left: 0px;
+            .sidebar {
+                top: 0;
+                left: 0;
                 height: 89.5%; 
                 width: 10%;
                 position: absolute; 
                 border-right: 3px black solid;
             }
-            div.main {
+            .main {
                 float: right;
                 overflow: visible; 
                 overflow-y: auto; 
@@ -47,8 +42,8 @@
                 padding-top: 5px;
                 padding-left: 20px;
             }
-            div.bottom {
-                bottom: 0px;
+            .bottom {
+                bottom: 0;
                 height: 5%; 
                 width: 100%;
                 position: absolute; 
