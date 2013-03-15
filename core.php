@@ -6,9 +6,9 @@ libxml_use_internal_errors(true);
 require_once 'xmlfile.php';
 
 $feedFile = new xmlfile();
-$feed = $feedFile->getXML('Takeout/subscriptions.xml');
+$feedFile->getXML('Takeout/subscriptions.xml');
 
-switch ($feedFile->getXMLType($feed)) {
+switch ($feedFile->getXMLType()) {
     case 'OPML':
         //echo 'OPML';
 
@@ -18,5 +18,5 @@ switch ($feedFile->getXMLType($feed)) {
         break;
 }
 
-$feedFile->readOPML($feed);
+$feedFile->readOPML();
 
