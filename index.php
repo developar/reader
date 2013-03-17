@@ -50,6 +50,11 @@
                 border-top: 3px black solid;
             }
         </style>
+        <script>
+            function removeMe(node) {
+                node.parentNode.style.display = 'none';
+            }
+        </script>
     </head>
     <body>
         <div class="top">

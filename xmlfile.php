@@ -7,8 +7,8 @@
  */
 class xmlfile {
 
-    var $xml;
-    var $xmlItems;
+    protected $xml;
+    protected $xmlItems;
 
     const ATOM_NS = 'http://www.w3.org/2005/Atom';
 
@@ -24,51 +24,12 @@ class xmlfile {
         }
     }
 
-    private function readOPMLItem($itemNumber) {
-        $title = $this->xml_attribute($this->xmlItems[$itemNumber], 'title');
-        $xmlURL = $this->xml_attribute($this->xmlItems[$itemNumber], 'xmlUrl');
-//            $htmlURL = $this->xml_attribute($xml->body->outline[$i], 'htmlUrl');
-
-        if (gettype($xmlURL) !== 'NULL') {
-            $feed = $this->getXML($xmlURL);
-            $xmlType = $this->getXMLType($feed);
-            switch ($xmlType) {
-                case 'RSS':
-                case 'ATOM':
-                case 'OPML':
-                    echo "1 {$xmlType} <a href=\"{$xmlURL}\">{$title}</a><br>" . PHP_EOL;
-
-                    break;
-                default:
-                    echo "3 {$xmlType} <a href=\"{$xmlURL}\">{$title}</a><br>" . PHP_EOL;
-
-                    break;
-            }
-        } else {
-                    echo "2 Folder: {$title}<br>" . PHP_EOL;
-            
-        }
-        if (gettype($xmlURL) !== 'NULL') {
-            $feed = $this->getXML($xmlURL);
-            //echo $this->getXMLType($feed);
-        }
-    }
-
-    public function readOPML() {
-
-        $this->xmlItems = $this->xml->body->outline;
-
-        $feedCount = $this->xmlItems->count();
-        echo "There are {$feedCount} feeds.<br>" . PHP_EOL;
-        for ($i = 0; $i < $feedCount; $i++) {
-            $this->readOPMLItem($i);
-        }
-    }
-
     public function getXML($file) {
+//        echo "choo?$ {$file} $";
+
         $this->xml = simplexml_load_file($file);
         if ($this->xml === false) {
-            echo "Failed loading XML<br>\n";
+            echo "Failed loading {$file}<br>\n";
             foreach (libxml_get_errors() as $error) {
                 echo "\t", $error->message;
             }
@@ -81,15 +42,18 @@ class xmlfile {
      * @param array $xml
      * @return string
      */
-    public function getXMLType() {
+    public function getXMLType($file) {
+        $this->getXML($file);
         $xmlName = $this->xml->getName();
 //        $namespaces = $xml->getNamespaces(true);
         //$hasATOM = $this->existsNSByVal($namespaces, ATOM_NS);
         switch ($xmlName) {
             case 'opml': return 'OPML';
             case 'rss': return 'RSS';
+            case 'feed': return 'ATOM';
             default: return 'Unknown';
         }
+        $this->xml = NULL;
     }
 
     public function readRSS() {
